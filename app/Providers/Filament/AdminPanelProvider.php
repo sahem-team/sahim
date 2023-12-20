@@ -28,8 +28,12 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => '#f16d5b',
             ])
+            ->font('Almarai')
+            ->brandName('ساهم')
+            ->brandLogo(asset('assets/logos/logo.png'))
+            ->favicon(asset('assets/logos/1.png'))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
