@@ -26,6 +26,8 @@ class DonorPanelProvider extends PanelProvider
             ->id('donor')
             ->path('donor')
             ->login()
+            ->registration()
+            ->topNavigation()
             ->colors([
                 'primary' => '#f16d5b',
             ])

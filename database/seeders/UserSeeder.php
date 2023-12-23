@@ -13,32 +13,70 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        // Charities
         User::create([
-            'name' => 'AdminTest',
-            'email' => 'admin@example.com',
-            'password' => bcrypt('adminpassword'),
-            'role' => 'admin',
+            'name' => 'Charity_1',
+            'email' => 'charity_1@example.com',
+            'password' => 'charitypassword',
+            'role' => 'charity',
         ]);
-
         User::create([
-            'name' => 'CharityUserTest',
-            'email' => 'charity@example.com',
-            'password' => bcrypt('charitypassword'),
+            'name' => 'Charity_2',
+            'email' => 'charity_2@example.com',
+            'password' => 'charitypassword',
+            'role' => 'charity',
+        ]);
+        User::create([
+            'name' => 'Charity_3',
+            'email' => 'charity_3@example.com',
+            'password' => 'charitypassword',
+            'role' => 'charity',
+        ]);
+        User::create([
+            'name' => 'Charity_4',
+            'email' => 'charity_4@example.com',
+            'password' => 'charitypassword',
+            'role' => 'charity',
+        ]);
+        User::create([
+            'name' => 'Charity_6',
+            'email' => 'charity_6@example.com',
+            'password' => 'charitypassword',
+            'role' => 'charity',
+        ]);
+        User::create([
+            'name' => 'Charity_5',
+            'email' => 'charity_5@example.com',
+            'password' => 'charitypassword',
             'role' => 'charity',
         ]);
 
-        User::create([
-            'name' => 'StoreUserTest',
-            'email' => 'store@example.com',
-            'password' => bcrypt('storepassword'),
-            'role' => 'store',
-        ]);
+        // donors:
 
         User::create([
-            'name' => 'RestaurantUserTest',
-            'email' => 'restaurant@example.com',
-            'password' => bcrypt('restaurantpassword'),
-            'role' => 'restaurant',
+            'name' => 'Donor_1',
+            'email' => 'donor_1@example.com',
+            'password' => 'donorpassword',
+            'role' => 'donor',
         ]);
+        User::create([
+            'name' => 'Donor_2',
+            'email' => 'donor_2@example.com',
+            'password' => 'donorpassword',
+            'role' => 'donor',
+        ]);
+        User::create([
+            'name' => 'Donor_3',
+            'email' => 'donor_3@example.com',
+            'password' => 'donorpassword',
+            'role' => 'donor',
+        ]);
+        User::create([
+            'name' => 'Donor_4',
+            'email' => 'donor_4@example.com',
+            'password' => 'donorpassword',
+            'role' => 'donor',
+        ]);
+
     }
 }

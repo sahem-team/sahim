@@ -48,13 +48,13 @@ class User extends Authenticatable
         return $this->hasOne(Charity::class);
     }
 
-    public function store()
+    public function donor()
     {
-        return $this->hasOne(Store::class);
+        return $this->hasOne(Donor::class);
     }
+    // public function donation()
+    // {
+    //     return $this->hasMany(Donation::class);
+    // }
 
-    public function restaurant()
-    {
-        return $this->hasOne(Restaurant::class);
-    }
 }

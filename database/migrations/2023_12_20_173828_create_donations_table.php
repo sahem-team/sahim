@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('donations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('donor_id')->constrained('donors');
+            $table->foreignId('charity_id')->nullable()->constrained('charities');
             $table->string('donation_name');
             $table->text('description');
             $table->string('image_url')->nullable();
@@ -21,9 +22,6 @@ return new class extends Migration
             $table->integer('quantity');
             $table->date('expiration_date');
             $table->enum('status', ['listed', 'donated', 'delivered', 'rejected'])->default('listed');
-            $table->string('donation_type'); // 'store' or 'restaurant'
-            $table->unsignedBigInteger('donator_id');
-            $table->unsignedBigInteger('recipient_charity_id')->nullable();
             $table->timestamps();
         });
     }

@@ -58,6 +58,10 @@
                                 aria-current="page">الرئيسية</a>
                         </li>
                         <li>
+                            <a href="{{ url('/donations') }}"
+                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:bg-white md:hover:text-sahem_pr-700 md:p-0 {{ Request::is('articles') ? 'md:text-sahem_pr-500 bg-sahem_pr-700' : '' }}">تبرعات</a>
+                        </li>
+                        <li>
                             <a href="{{ url('/articles') }}"
                                 class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:bg-white md:hover:text-sahem_pr-700 md:p-0 {{ Request::is('articles') ? 'md:text-sahem_pr-500 bg-sahem_pr-700' : '' }}">مقالات</a>
                         </li>
@@ -122,6 +126,11 @@
                         <a href="{{ url('/') }}"
                             class="hover:underline me-4 md:me-6 {{ Request::is('/') ? 'text-sahem_pr-500 ' : '' }}">الرئيسية
                         </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/donations') }}"
+                            class="hover:underline me-4 md:me-6 {{ Request::is('articles') ? 'text-sahem_pr-500 ' : '' }}">
+                            تبرعات</a>
                     </li>
                     <li>
                         <a href="{{ url('/articles') }}"

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DonationController;
+use App\Models\Donation;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,3 +30,4 @@ Route::get('/articles', function () {
 Route::get('/article', function () {
     return view('article');
 });
+Route::resource('donations', DonationController::class);
