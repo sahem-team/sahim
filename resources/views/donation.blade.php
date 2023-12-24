@@ -80,10 +80,11 @@
 
             </div>
             <div>
-                <form action="" class="flex flex-col w-full">
+                <form action={{route('donation_requests.create')}} class="flex flex-col w-full">
                     <label class="">أكتب رسالة للمتبرع</label>
-                    <textarea class="w-full my-2 bg-gray-50 rounded-xl focus:ring-sahem_pr-500 focus:border-sahem_pr-500" name=""
+                    <textarea class="w-full my-2 bg-gray-50 rounded-xl focus:ring-sahem_pr-500 focus:border-sahem_pr-500" name="message"
                         id="" cols="30" rows="2"></textarea>
+                        <input type="hidden" name="donation_id" value={{$donation->id}}>
                     <button
                         class="bg-sahem_pr-500 hover:bg-sahem_pr-600 font-semibold py-3 px-5 rounded-full w-full text-light_1 ">إرسال
                         الطلب</button>

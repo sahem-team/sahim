@@ -9,11 +9,13 @@ use Filament\Resources\Pages\EditRecord;
 class EditDonation extends EditRecord
 {
     protected static string $resource = DonationResource::class;
+    protected static ?string $navigationLabel = 'تعديل التبرع ';
+
+
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\ViewAction::make(),
             Actions\DeleteAction::make(),
         ];
     }

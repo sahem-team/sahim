@@ -9,6 +9,8 @@ class DonationRequest extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function charity()
     {
         return $this->belongsTo(Charity::class);

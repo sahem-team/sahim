@@ -68,9 +68,6 @@ class CreateDonation extends CreateRecord
                                 '1:1',
                             ]
                         ),
-
-
-                    // SpatieMediaLibraryFileUpload::make('image_url')->label('الصورة')->disk('donation_images')
                 ]),
         ];
     }
