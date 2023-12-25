@@ -75,6 +75,12 @@ class ManageDonationRequests extends ManageRelatedRecords
                         'ينتضر' => 'info',
                         'لم يتم التبرع له ' => 'gray',
                     }),
+                TextColumn::make('delivery_code')->label('رمز التسليم')->state(function (DonationRequest $record): string {
+                if ($record->accepted == 1) {
+                    return $record->delivery_code;
+                }
+                return 'لم يتم التبرع له';
+            }),
             ])
             ->filters([
                 //
@@ -84,11 +90,16 @@ class ManageDonationRequests extends ManageRelatedRecords
                 Tables\Actions\ViewAction::make()->modalHeading('عرض  الطلب'),
                 Tables\Actions\EditAction::make()->modalHeading('تعديل الطلب')->after(function ($record) {
                     if ($record->accepted) {
+                        $randomNumber = mt_rand(100000, 999999);
+                        $deliveryCode = '#' . $randomNumber;
+                        $record->delivery_code = $deliveryCode;
                         $record->donation_status = 'تم التبرع له';
+                        $record->request_status = 'تم القبول';
                         $record->save();
                     }
                 }),
             ])
             ->groupedBulkActions([]);
     }
+
 }

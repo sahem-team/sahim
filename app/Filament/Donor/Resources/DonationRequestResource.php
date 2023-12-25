@@ -8,6 +8,8 @@ use App\Filament\Donor\Resources\DonationResource\RelationManagers\RequestsRelat
 use App\Models\DonationRequest;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
@@ -42,22 +44,30 @@ class DonationRequestResource extends Resource
                 TextColumn::make('message')->label(' الرسالة ')->limit(30)->extraAttributes([
                     'class' => 'max-w-xs break-words'
                 ]),
+                TextColumn::make('delivery_code')->label('رمز التسليم')->state(function (DonationRequest $record): string {
+                    if ($record->accepted == 1) {
+                        return $record->delivery_code;
+                    }
+                    return 'لم يتم التبرع له';
+                }),
                 TextColumn::make('donation_status')->label('الحالة')->badge()
                     ->color(fn (string $state): string => match ($state) {
                         'تم التبرع له' => 'success',
                         'ينتضر' => 'info',
                         'لم يتم التبرع له ' => 'gray',
                     }),
+
             ])
             ->filters([
                 //
             ])
             ->actions([
-
+                Tables\Actions\ViewAction::make(),
             ])
             ->bulkActions([
                 //
-            ]);
+            ])
+            ->recordUrl(null);
     }
 
     public static function getRelations(): array
@@ -73,6 +83,7 @@ class DonationRequestResource extends Resource
     }
 
 
+
     public static function getPages(): array
     {
         return [
@@ -84,5 +95,28 @@ class DonationRequestResource extends Resource
     public static function getNavigationBadge(): ?string
     {
         return static::$model::count();
+    }
+
+    public static function infolist(Infolist $infolist): Infolist
+    {
+        return $infolist
+            ->columns(2)
+            ->schema([
+                TextEntry::make('charity.name')->label('مقدم الطلب')->color('primary'),
+                TextEntry::make('message')->label(' الرسالة ')->color('primary'),
+                TextEntry::make('donation_status')->label('الحالة')->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        'تم التبرع له' => 'success',
+                        'ينتضر' => 'info',
+                        'لم يتم التبرع له ' => 'gray',
+                    }),
+                TextEntry::make('delivery_code')->label('رمز التسليم')->color('primary')->state(function (DonationRequest $record): string {
+                    if ($record->accepted == 1) {
+                        return $record->delivery_code;
+                    }
+                    return 'لم يتم التبرع له';
+                }),
+
+            ]);
     }
 }

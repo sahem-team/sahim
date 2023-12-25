@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\DonationRequestController;
+use App\Http\Controllers\generatePDF;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request as FacadesRequest;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,3 +36,9 @@ Route::get('/article', function () {
 
 Route::resource('donations', DonationController::class);
 Route::resource('donation_requests', DonationRequestController::class);
+
+Route::get('/inv', function(){
+    return view('pdf.invoice');
+});
+
+Route::get('receipt/{donation_request}', [generatePDF::class, 'index'])->name('receipt.pdf');

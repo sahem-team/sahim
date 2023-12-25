@@ -27,6 +27,7 @@ class CharityPanelProvider extends PanelProvider
             ->path('charity')
             ->login()
             ->registration()
+            ->topNavigation()
             ->colors([
                 'primary' => '#f16d5b',
             ])
@@ -42,7 +43,6 @@ class CharityPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Charity/Widgets'), for: 'App\\Filament\\Charity\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
