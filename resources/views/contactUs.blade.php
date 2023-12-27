@@ -5,19 +5,19 @@
         <div class="flex sm:flex-row flex-col gap-6 sm:gap-0 justify-around my-12">
             <div class="flex flex-col items-center">
                 <h3 class="font-madani text-xl mb-2 font-medium">مركزنا </h3>
-                <p>الرياض -حي الملقا - انس مالك
+                <p>{{$home->contact_us_location}}
                 </p>
             </div>
             <div class="flex flex-col items-center">
                 <h3 class="font-madani text-xl mb-2 font-medium">البريد الالكتروني
                 </h3>
-                <p>contact@sahem.com
+                <p>{{$home->contact_us_email}}
                 </p>
             </div>
             <div class="flex flex-col items-center">
                 <h3 class="font-madani text-xl mb-2 font-medium">الهاتف / واتساب
                 </h3>
-                <p dir="ltr">+966505152703
+                <p dir="ltr">{{$home->contact_us_phone}}
                 </p>
             </div>
         </div>

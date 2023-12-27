@@ -10,9 +10,9 @@
             <img src="/assets/graphics/box.svg" alt=""
                 class="w-[60px] absolute -rotate-12 top-0 sm:right-[47%] left-24 box-2-3 z-0">
             <div class="flex flex-col gap-6 mt-8">
-                <h1 class="text-sahem_pr-500 font-almaria font-bold text-center text-6xl z-10 ">ساهم، لنغذي الحاجة والأمل
+                <h1 class="text-sahem_pr-500 font-almaria font-bold text-center text-6xl z-10 ">{{$home->main_title}}
                 </h1>
-                <p class="text-center text-xl font-madani text-dark_2 ">طعامك الفائض قد يعني الكثير لآخرين</p>
+                <p class="text-center text-xl font-madani text-dark_2 ">{{$home->sub_title}}</p>
             </div>
             <div class="flex justify-center gap-8 mt-8 sm:flex-row flex-col sm:mx-0 mx-8">
                 <button
@@ -33,11 +33,7 @@
         <div
             class="flex flex-col max-w-screen-xl mx-auto justify-center py-12 text-center gap-5 overflow-x-clip bg-dark_1 sm:px-0 px-4">
             <h2 class="text-light_1 font-madani text-4xl">دورنا في المجتمع</h2>
-            <p class="text-light_2 font-almaria text-lg text-justify sm:text-center ">تسعى منصة "ساهم" إلى الحد من هدر
-                الطعام ودعم المحتاجين، من خلال
-                توفير وسيلة لربط المؤسسات الخيرية بالمطاعم والمتاجر التي تمتلك طعامًا فائضًا، مما يتيح فرصة استغلال هذا
-                الفائض وتوجيهه للمحتاجين بدلاً من التخلص منه، فتأتي منصة "ساهم" كوسيلة للتعاون والتكامل بين مختلف الجهات
-                لتقديم الدعم والإغاثة لأولئك الذين في حاجة ماسة إلى الطعام.</p>
+            <p class="text-light_2 font-almaria text-lg text-justify sm:text-center ">{{$home->our_role}}</p>
         </div>
     </div>
     {{-- Section 2 --}}
@@ -52,11 +48,8 @@
                         <p class=" text-light_2 font-madani text-3xl">1</p>
                     </div>
                     <div>
-                        <h3 class="text-2xl mb-2  "> يقوم ممثل المطعم أو المتجر بوضع تبرع في المنصة</h3>
-                        <p class="sm:block hidden">عندما يقرر ممثل المطعم أو المتجر التبرع بالطعام الفائض، يقوم بالدخول إلى
-                            منصة "ساهم" ويسجل التبرع
-                            بوصف مفصل للطعام المتاح للتبرع. يقدم المعلومات الضرورية مثل نوع الطعام، كمية الفائض، وتفاصيل
-                            الاتصال.</p>
+                        <h3 class="text-2xl mb-2  ">{{$home->step_1_title}} </h3>
+                        <p class="sm:block hidden">{{$home->step_1_description}}</p>
 
                     </div>
                 </div>
@@ -69,11 +62,8 @@
                         <p class=" text-light_2 font-madani text-3xl">2</p>
                     </div>
                     <div>
-                        <h3 class="text-2xl mb-2 "> يقوم ممثل المؤسسة الخيرية بتصفح التبرعات و تقديم الطلب</h3>
-                        <p class="sm:block hidden">بمجرد أن يتم وضع التبرع على المنصة، يقوم ممثل المؤسسة الخيرية بتصفح
-                            التبرعات المتاحة عبر الصفحة
-                            والبحث عن الطعام الذي يناسب احتياجات المحتاجين الذين يخدمونهم. يمكنهم طلب الكميات المحددة
-                            والاتصال بممثل المتجر أو المطعم لترتيب استلام الطعام.
+                        <h3 class="text-2xl mb-2 "> {{$home->step_2_title}}</h3>
+                        <p class="sm:block hidden">{{$home->step_2_description}}
                         </p>
 
                     </div>
@@ -87,12 +77,9 @@
                         <p class=" text-light_2 font-madani text-3xl">3</p>
                     </div>
                     <div>
-                        <h3 class="text-2xl mb-2 "> يقبل المتبرع الطلب و يقوم بتسليمه للمؤسسة الخيرية
+                        <h3 class="text-2xl mb-2 ">{{$home->step_3_title}}
                         </h3>
-                        <p class="sm:block hidden">عندما يتم تقديم طلب من ممثل المؤسسة الخيرية، يقوم المتبرع بالتأكيد على
-                            الطلب ويقبله. يتم ترتيب
-                            توصيل الطعام أو تحديد مكان الاستلام بين المتبرع والمؤسسة الخيرية. المتبرع يعمل على تسليم الطعام
-                            بطريقة تضمن سلامته وجودته، ليتمكن المستفيدون النهائيون من الاستفادة منه بشكل أفضل.</p>
+                        <p class="sm:block hidden">{{$home->step_3_description}}</p>
 
                     </div>
                 </div>
@@ -105,11 +92,8 @@
                         <p class=" text-light_2 font-madani text-3xl">4</p>
                     </div>
                     <div>
-                        <h3 class="text-2xl mb-2 ">تقوم المؤسسة بتوزيع التبرعات على المحتاجين </h3>
-                        <p class="sm:block hidden">بمجرد استلام الطعام من المتبرع، تقوم المؤسسة الخيرية بتنظيم وتوزيع الطعام
-                            على المحتاجين. يتم
-                            التعامل بحرفية لضمان توزيع الطعام بشكل عادل وفقًا للاحتياجات الملحة، ويمكن أن يشمل ذلك التوزيع
-                            عبر مطابخ خيرية أو توصيل الطعام مباشرةً للعائلات أو الأفراد الذين يحتاجون إليه بشكل مباشر.</p>
+                        <h3 class="text-2xl mb-2 ">{{$home->step_4_title}}</h3>
+                        <p class="sm:block hidden">{{$home->step_4_description}}</p>
 
                     </div>
                 </div>
