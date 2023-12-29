@@ -10,19 +10,25 @@
             <img src="/assets/graphics/box.svg" alt=""
                 class="w-[60px] absolute -rotate-12 top-0 sm:right-[47%] left-24 box-2-3 z-0">
             <div class="flex flex-col gap-6 mt-8">
-                <h1 class="text-sahem_pr-500 font-almaria font-bold text-center text-6xl z-10 ">{{$home->main_title}}
+                <h1 class="text-sahem_pr-500 font-almaria font-bold text-center text-6xl z-10 ">{{ $home->main_title }}
                 </h1>
-                <p class="text-center text-xl font-madani text-dark_2 ">{{$home->sub_title}}</p>
+                <p class="text-center text-xl font-madani text-dark_2 ">{{ $home->sub_title }}</p>
             </div>
             <div class="flex justify-center gap-8 mt-8 sm:flex-row flex-col sm:mx-0 mx-8">
-                <button
-                    class="relative px-8 py-2 rounded-md bg-sahem_pr-500 isolation-auto z-10 border-2 border-sahem_pr-800 text-light_1 hover:text-dark_1
+                <a href="/donations">
+                    <button
+                        class="relative px-8 py-2 rounded-md bg-sahem_pr-500 isolation-auto z-10 border-2 border-sahem_pr-800 text-light_1 hover:text-dark_1
         before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-white before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700">
-                    تصفح التبرعات</button>
-                <button
-                    class="relative px-8 py-2 rounded-md bg-white isolation-auto z-10 border-2 border-sahem_pr-800 text-dark_1 hover:text-light_1
+                        تصفح التبرعات</button>
+
+                </a>
+
+                <a href="/donor/login?from=donor">
+                    <button
+                        class="relative px-8 py-2 rounded-md bg-white isolation-auto z-10 border-2 border-sahem_pr-800 text-dark_1 hover:text-light_1
         before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-sahem_pr-500 before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700">
-                    قم بتبرع</button>
+                        قم بتبرع</button>
+                </a>
 
             </div>
             <img class="sm:h-[500px] sm:-mb-12 -mb-6 characters z-50" src="assets/graphics/header.svg" alt="">
@@ -33,7 +39,7 @@
         <div
             class="flex flex-col max-w-screen-xl mx-auto justify-center py-12 text-center gap-5 overflow-x-clip bg-dark_1 sm:px-0 px-4">
             <h2 class="text-light_1 font-madani text-4xl">دورنا في المجتمع</h2>
-            <p class="text-light_2 font-almaria text-lg text-justify sm:text-center ">{{$home->our_role}}</p>
+            <p class="text-light_2 font-almaria text-lg text-justify sm:text-center ">{{ $home->our_role }}</p>
         </div>
     </div>
     {{-- Section 2 --}}
@@ -48,8 +54,8 @@
                         <p class=" text-light_2 font-madani text-3xl">1</p>
                     </div>
                     <div>
-                        <h3 class="text-2xl mb-2  ">{{$home->step_1_title}} </h3>
-                        <p class="sm:block hidden">{{$home->step_1_description}}</p>
+                        <h3 class="text-2xl mb-2  ">{{ $home->step_1_title }} </h3>
+                        <p class="sm:block hidden">{{ $home->step_1_description }}</p>
 
                     </div>
                 </div>
@@ -62,8 +68,8 @@
                         <p class=" text-light_2 font-madani text-3xl">2</p>
                     </div>
                     <div>
-                        <h3 class="text-2xl mb-2 "> {{$home->step_2_title}}</h3>
-                        <p class="sm:block hidden">{{$home->step_2_description}}
+                        <h3 class="text-2xl mb-2 "> {{ $home->step_2_title }}</h3>
+                        <p class="sm:block hidden">{{ $home->step_2_description }}
                         </p>
 
                     </div>
@@ -77,9 +83,9 @@
                         <p class=" text-light_2 font-madani text-3xl">3</p>
                     </div>
                     <div>
-                        <h3 class="text-2xl mb-2 ">{{$home->step_3_title}}
+                        <h3 class="text-2xl mb-2 ">{{ $home->step_3_title }}
                         </h3>
-                        <p class="sm:block hidden">{{$home->step_3_description}}</p>
+                        <p class="sm:block hidden">{{ $home->step_3_description }}</p>
 
                     </div>
                 </div>
@@ -92,8 +98,8 @@
                         <p class=" text-light_2 font-madani text-3xl">4</p>
                     </div>
                     <div>
-                        <h3 class="text-2xl mb-2 ">{{$home->step_4_title}}</h3>
-                        <p class="sm:block hidden">{{$home->step_4_description}}</p>
+                        <h3 class="text-2xl mb-2 ">{{ $home->step_4_title }}</h3>
+                        <p class="sm:block hidden">{{ $home->step_4_description }}</p>
 
                     </div>
                 </div>
@@ -155,10 +161,13 @@
     {{-- Section 4 --}}
     <div class="max-w-screen-xl mx-auto pt-12 flex flex-col gap-8 ">
         <h2 class="text-dark_1 font-madani text-4xl text-center">إبداء بتبرع الان </h2>
-        <button
-            class="relative px-8 py-2 mx-8 sm:mx-0 rounded-md bg-sahem_pr-500 isolation-auto z-10 border-2 border-sahem_pr-800 text-light_1 hover:text-dark_1
+        <a href="/donor/login?from=donor"
+            class="text-center relative px-8 py-2 mx-8 sm:mx-0 rounded-md bg-sahem_pr-500 isolation-auto z-10 border-2 border-sahem_pr-800 text-light_1 hover:text-dark_1
         before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-white before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700">
-            قم بتبرع</button>
+            <button>
+                قم بتبرع</button>
+        </a>
+
 
         <img class="sm:h-[500px] sm:-mb-10 mt-8 sm:mt-0 -mb-[20px] " src="/assets/graphics/step-3.svg" alt="">
 

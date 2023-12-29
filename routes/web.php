@@ -7,6 +7,9 @@ use App\Models\Article;
 use App\Models\Home;
 use Illuminate\Support\Facades\Route;
 use App\Filament\Resources\HomeResource;
+use App\Http\Controllers\RegistrationController;
+use PhpParser\Builder\Function_;
+use PhpParser\Node\Expr\FuncCall;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +25,7 @@ use App\Filament\Resources\HomeResource;
 Route::get('/', function () {
     $home = Home::where('page', 'الرئيسية')->first();
     return view('welcome', compact('home'));
-});
+})->name('welcome');
 Route::get('/about-us', function () {
     $home = Home::where('page', 'من نحن')->first();
     return view('aboutUs', compact('home'));
@@ -47,12 +50,14 @@ Route::get('/inv', function () {
     return view('pdf.invoice');
 });
 
-// $x = HomeResource::getUrl('index');
+Route::get('donor-register', function(){
+    return view('donor_register');
+});
+Route::get('charity-register', function(){
+    return view('charity_register');
+});
 
-// Route::get('/admin/homes', function () {
-//     $url = HomeResource::getUrl('edit', ['record' => 1]);
-//     return redirect($url);
-//     // return redirect(HomeResource::getUrl('index'));
-// });
+Route::post('/donor-register', [RegistrationController::class, 'storeDonor']);
+Route::post('/charity-register', [RegistrationController::class, 'storeCharity']);
 
 Route::get('receipt/{donation_request}', [generatePDF::class, 'index'])->name('receipt.pdf');

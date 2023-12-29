@@ -26,18 +26,32 @@
     <div>
         <nav class="bg-white w-full z-50 top-0 start-0 border-b border-gray-200 relative ">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <a href="" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
                     <img src="/assets/logos/logo.png" class="w-32" alt="sahem  Logo">
                 </a>
-                <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse gap-3 ">
                     @if (Auth::check())
-                        <button type="button"
-                            class="text-light_1 bg-dark_1 font-almaria focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 text-center">
-                            حسابي</button>
+                        @if (Auth::user()->role === 'admin')
+                            <a href="/admin"
+                                class="text-light_1 bg-dark_1 font-almaria focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 text-center">حسابي</a>
+                        @elseif (Auth::user()->role === 'donor')
+                            <a href="/donor"
+                                class="text-light_1 bg-dark_1 font-almaria focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 text-center">حسابي</a>
+                        @elseif (Auth::user()->role === 'charity')
+                            <a href="/charity"
+                                class="text-light_1 bg-dark_1 font-almaria focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 text-center">حسابي</a>
+                        @endif
                     @else
-                        <button type="button" data-modal-target="popup-modal" data-modal-toggle="popup-modal"
-                            class="text-white bg-sahem_pr-500 font-almaria focus:ring-4 focus:outline-none focus:ring-primary_light font-medium rounded-lg text-sm px-4 py-2 text-center">
-                            تسجيل الدخول</button>
+                        <div class="hidden md:flex gap-2  ">
+                            <button type="button" data-modal-target="popup-modal-login"
+                                data-modal-toggle="popup-modal-login"
+                                class="text-white bg-sahem_pr-500 font-almaria hover:bg-sahem_pr-600 focus:ring-4 focus:outline-none focus:ring-primary_light font-medium rounded-lg text-sm px-4 py-2 text-center">
+                                تسجيل الدخول</button>
+                            <button type="button" data-modal-target="popup-modal-register"
+                                data-modal-toggle="popup-modal-register"
+                                class="text-dark_1  bg-light_2 hover:bg-light_1 border-2 border-sahem_pr-500 font-almaria focus:ring-4 focus:outline-none focus:ring-primary_light font-medium rounded-lg text-sm px-4 py-2 text-center">
+                                إنشاء حساب</button>
+                        </div>
                     @endif
                     <button data-collapse-toggle="navbar-sticky" type="button"
                         class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 "
@@ -75,6 +89,14 @@
                                 class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:bg-white md:hover:text-sahem_pr-700 md:p-0 {{ Request::is('contact-us') ? 'md:text-sahem_pr-500 bg-sahem_pr-700' : '' }}">تواصل
                                 معنا</a>
                         </li>
+                        <div class="block md:hidden">
+                            <button type="button" data-modal-target="popup-modal" data-modal-toggle="popup-modal"
+                                class="text-white bg-sahem_pr-500 font-almaria hover:bg-sahem_pr-600 focus:ring-4 focus:outline-none focus:ring-primary_light font-medium rounded-lg text-sm px-4 py-2 text-center">
+                                تسجيل الدخول</button>
+                            <button {{-- type="button" data-modal-target="popup-modal" data-modal-toggle="popup-modal" --}}
+                                class="text-dark_1  bg-light_2 hover:bg-light_1 border-2 border-sahem_pr-500 font-almaria focus:ring-4 focus:outline-none focus:ring-primary_light font-medium rounded-lg text-sm px-4 py-2 text-center">
+                                إنشاء حساب</button>
+                        </div>
                     </ul>
 
                 </div>
@@ -82,31 +104,69 @@
         </nav>
     </div>
     {{-- ################################################################################################################## --}}
-                                                    {{-- login modal  --}}
-    <div id="popup-modal" tabindex="-1"
+    {{-- login modal  --}}
+    <div id="popup-modal-login" tabindex="-1"
         class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full bg-black/60 md:inset-0 h-[100%] max-h-full">
-            <div class="relative bg-gray-100 w-1/2 rounded-lg shadow dark:bg-gray-700 py-24 px-8">
-                <button type="button"
-                    class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                    data-modal-hide="popup-modal">
-                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="#f16d5b"
-                        viewBox="0 0 14 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                    </svg>
-                    <span class="sr-only">Close modal</span>
-                </button>
-                <div class="flex justify-center items-center p-4 gap-4 ">
-                    <a href="/charity/login" class="flex flex-col p-4 border-2 text-dark_2 border-gray-300 rounded-xl bg-white items-center justify-center w-1/2 h-48 shadow-2xl hover:shadow-sm hover:border-sahem_pr-500 hover:text-sahem_pr-500">
-                        <img src="/assets/graphics/charity_account.png" alt="" class="w-24">
-                        <p class=" font-madani text-xl ">الدخول كجهة خيرية</p>
-                    </a>
-                    <a href="/donor/login" class="flex flex-col p-4 border-2 text-dark_2 border-gray-300 rounded-xl bg-white items-center justify-center w-1/2 h-48 shadow-2xl hover:shadow-sm hover:border-sahem_pr-500 hover:text-sahem_pr-500">
-                        <img src="/assets/graphics/donor_account.png" alt="" class="w-24">
-                        <p class=" font-madani text-xl ">الدخول كمتبرع
-                        </p>
-                    </a>
-                </div>
+        <div class="relative bg-gray-100 w-1/2 rounded-lg shadow dark:bg-gray-700 py-24 px-8">
+            <button type="button"
+                class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                data-modal-hide="popup-modal-login">
+                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="#f16d5b"
+                    viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                </svg>
+                <span class="sr-only">Close modal</span>
+            </button>
+            <h2 class="text-center text-2xl text-dark_2 mb-4"> مرحبا في<span class="text-sahem_pr-500 font-madani"> ساهم
+                    ، </span> إختر نوع الحساب لتسجيل الدخول</h2>
+            <div class="flex justify-center items-center p-4 gap-4 ">
+                <a href="/charity/login?from=charity"
+                    class="flex flex-col p-4 border-2 text-dark_2 border-gray-300 rounded-xl bg-white items-center justify-center w-1/2 h-48 shadow-2xl hover:shadow-sm hover:border-sahem_pr-500 hover:text-sahem_pr-500">
+                    <img src="/assets/graphics/charity_account.png" alt="" class="w-24">
+                    <p class=" font-madani text-xl ">الدخول كجهة خيرية</p>
+                </a>
+                <a href="/donor/login?from=donor"
+                    class="flex flex-col p-4 border-2 text-dark_2 border-gray-300 rounded-xl bg-white items-center justify-center w-1/2 h-48 shadow-2xl hover:shadow-sm hover:border-sahem_pr-500 hover:text-sahem_pr-500">
+                    <img src="/assets/graphics/donor_account.png" alt="" class="w-24">
+                    <p class=" font-madani text-xl ">الدخول كمتبرع
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+    {{-- ################################################################################################################## --}}
+    {{-- ################################################################################################################## --}}
+    {{-- Register modal  --}}
+    <div id="popup-modal-register" tabindex="-1"
+        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full bg-black/60 md:inset-0 h-[100%] max-h-full">
+        <div class="relative bg-gray-100 w-1/2 rounded-lg shadow dark:bg-gray-700 py-24 px-8">
+            <button type="button"
+                class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                data-modal-hide="popup-modal-register">
+                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="#f16d5b"
+                    viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                </svg>
+                <span class="sr-only">Close modal</span>
+            </button>
+            <h2 class="text-center text-2xl text-dark_2 mb-4"> مرحبا في<span class="text-sahem_pr-500 font-madani">
+                    ساهم
+                    ، </span> ما نوع الحساب الذي تريد إنشائه</h2>
+            <div class="flex justify-center items-center p-4 gap-4 ">
+                <a href="/charity-register"
+                    class="flex flex-col p-4 border-2 text-dark_2 border-gray-300 rounded-xl bg-white items-center justify-center w-1/2 h-48 shadow-2xl hover:shadow-sm hover:border-sahem_pr-500 hover:text-sahem_pr-500">
+                    <img src="/assets/graphics/charity_account.png" alt="" class="w-24">
+                    <p class=" font-madani text-xl ">حساب جهة خيرية  </p>
+                </a>
+                <a href="/donor-register"
+                    class="flex flex-col p-4 border-2 text-dark_2 border-gray-300 rounded-xl bg-white items-center justify-center w-1/2 h-48 shadow-2xl hover:shadow-sm hover:border-sahem_pr-500 hover:text-sahem_pr-500">
+                    <img src="/assets/graphics/donor_account.png" alt="" class="w-24">
+                    <p class=" font-madani text-xl ">حساب متبرع
+                    </p>
+                </a>
+            </div>
         </div>
     </div>
     {{-- ################################################################################################################## --}}

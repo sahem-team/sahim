@@ -180,7 +180,4 @@ class DonationResource extends Resource
     {
         return static::$model::count();
     }
-
-
-
 }
