@@ -26,7 +26,7 @@ class CharityPanelProvider extends PanelProvider
             ->id('charity')
             ->path('charity')
             ->login()
-            ->registration()
+            // ->registration()
             ->topNavigation()
             ->colors([
                 'primary' => '#f16d5b',

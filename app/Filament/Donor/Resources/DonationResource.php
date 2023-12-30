@@ -8,6 +8,7 @@ use App\Filament\Donor\Resources\DonationResource\RelationManagers\RequestsRelat
 use App\Models\Donation;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -20,6 +21,8 @@ use Filament\Infolists\Components;
 use Filament\Infolists\Infolist;
 use Filament\Pages\SubNavigationPosition;
 use Filament\Resources\Pages\Page;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
 
 class DonationResource extends Resource
 {
@@ -44,23 +47,24 @@ class DonationResource extends Resource
                         Select::make('quantity_type')
                             ->label(' نوع الكمية')
                             ->options([
-                                'box' => 'علبة',
-                                'item' => 'قطعة',
-                                'unit' => 'حبة',
-                                'plate' => 'طبق',
-                                'bag' => 'كيس',
-                                'package' => 'رزمة',
-                                'bottle' => 'قنينة',
-                                'kilogram' => 'كيلوغرام',
-                                'liter' => 'لتر',
-                                'gram' => 'غرام',
-                                'milliliter' => 'مليلتر',
+                    'علبة' => 'علبة',
+                    'قطعة' => 'قطعة',
+                    'حبة' => 'حبة',
+                    'طبق' => 'طبق',
+                    'كيس' => 'كيس',
+                    'رزمة' => 'رزمة',
+                    'قنينة' => 'قنينة',
+                    'كيلوغرام' => 'كيلوغرام',
+                    'لتر' => 'لتر',
+                    'غرام' => 'غرام',
+                    'مليلتر' => 'مليلتر',
                             ]),
 
                         TextInput::make('quantity')
                             ->label('الكمية'),
                         DatePicker::make('expiration_date')
                             ->label('تاريخ الانتهاء'),
+                        // Hidden::make('donor_id')->default(auth()->user()->donor->id)
 
                     ])
                     ->columns(4),
@@ -174,6 +178,10 @@ class DonationResource extends Resource
 
     public static function getNavigationBadge(): ?string
     {
-        return static::$model::count();
+        return static::$model::where('donor_id', auth()->user()->donor->id)->count();
+    }
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->where('donor_id', auth()->user()->donor->id);
     }
 }

@@ -15,18 +15,18 @@
                 <p class="text-center text-xl font-madani text-dark_2 ">{{ $home->sub_title }}</p>
             </div>
             <div class="flex justify-center gap-8 mt-8 sm:flex-row flex-col sm:mx-0 mx-8">
-                <a href="/donations">
-                    <button
-                        class="relative px-8 py-2 rounded-md bg-sahem_pr-500 isolation-auto z-10 border-2 border-sahem_pr-800 text-light_1 hover:text-dark_1
+                <a href="/donations"
+                    class="relative px-8 py-2 text-center  rounded-md bg-sahem_pr-500 isolation-auto z-10 border-2 border-sahem_pr-800 text-light_1 hover:text-dark_1
         before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-white before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700">
+                    <button>
                         تصفح التبرعات</button>
 
                 </a>
 
-                <a href="/donor/login?from=donor">
-                    <button
-                        class="relative px-8 py-2 rounded-md bg-white isolation-auto z-10 border-2 border-sahem_pr-800 text-dark_1 hover:text-light_1
-        before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-sahem_pr-500 before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700">
+                <a href="/donor/login"
+                    class="relative px-8 py-2 rounded-md bg-white isolation-auto z-10 border-2 border-sahem_pr-800 text-dark_1 hover:text-light_1
+        before:absolute before:w-full text-center before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-sahem_pr-500 before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700">
+                    <button>
                         قم بتبرع</button>
                 </a>
 
@@ -161,7 +161,7 @@
     {{-- Section 4 --}}
     <div class="max-w-screen-xl mx-auto pt-12 flex flex-col gap-8 ">
         <h2 class="text-dark_1 font-madani text-4xl text-center">إبداء بتبرع الان </h2>
-        <a href="/donor/login?from=donor"
+        <a href="/donor/login"
             class="text-center relative px-8 py-2 mx-8 sm:mx-0 rounded-md bg-sahem_pr-500 isolation-auto z-10 border-2 border-sahem_pr-800 text-light_1 hover:text-dark_1
         before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-white before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700">
             <button>

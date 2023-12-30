@@ -6,6 +6,7 @@ use App\Filament\Donor\Resources\DonationResource;
 use Filament\Actions;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
@@ -31,24 +32,26 @@ class CreateDonation extends CreateRecord
                         ->label('الاسم'),
                     Select::make('quantity_type')
                         ->label(' نوع الكمية')
-                        ->options([
-                            'box' => 'علبة',
-                            'item' => 'قطعة',
-                            'unit' => 'حبة',
-                            'plate' => 'طبق',
-                            'bag' => 'كيس',
-                            'package' => 'رزمة',
-                            'bottle' => 'قنينة',
-                            'kilogram' => 'كيلوغرام',
-                            'liter' => 'لتر',
-                            'gram' => 'غرام',
-                            'milliliter' => 'مليلتر',
-                        ]),
+                    ->options([
+                        'علبة' => 'علبة',
+                        'قطعة' => 'قطعة',
+                        'حبة' => 'حبة',
+                        'طبق' => 'طبق',
+                        'كيس' => 'كيس',
+                        'رزمة' => 'رزمة',
+                        'قنينة' => 'قنينة',
+                        'كيلوغرام' => 'كيلوغرام',
+                        'لتر' => 'لتر',
+                        'غرام' => 'غرام',
+                        'مليلتر' => 'مليلتر',
+                    ]),
 
                     TextInput::make('quantity')
                         ->label('الكمية'),
                     DatePicker::make('expiration_date')
                         ->label('تاريخ الانتهاء'),
+                    // Hidden::make('donor_id')->default(auth()->user()->donor->id)
+
                 ])->columns(4),
             Step::make('Description')
                 ->label('الوصف')
@@ -73,7 +76,7 @@ class CreateDonation extends CreateRecord
     }
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        $data['donor_id'] = 1;
+        $data['donor_id'] = auth()->user()->donor->id;
         return $data;
     }
 }

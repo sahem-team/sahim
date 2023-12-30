@@ -44,8 +44,15 @@ Route::get('/articles', function () {
     return view('articles', compact('articles'));
 });
 
-Route::resource('donations', DonationController::class);
-Route::resource('donation_requests', DonationRequestController::class);
+// Route::resource('donations', DonationController::class);
+// Route::resource('donation_requests', DonationRequestController::class);
+Route::get('/donations', [DonationController::class, 'index'])->name('donations.show');
+// Route::get('/donations/{donation}', [DonationController::class, 'show'])->name('donations.show');
+// Route::post('/donation_requests', [DonationRequestController::class, 'store'])->name('donation_requests.store');
+Route::middleware([ 'charity'])->group(function () {
+    Route::get('/donations/{donation}', [DonationController::class, 'show'])->name('donations.show');
+    Route::post('/donation_requests', [DonationRequestController::class, 'store'])->name('donation_requests.store');
+});
 
 Route::get('/inv', function () {
     return view('pdf.invoice');
@@ -59,7 +66,7 @@ Route::get('charity-register', function(){
 });
 
 Route::post('/donor-register', [RegistrationController::class, 'storeDonor']);
-Route::post('/charity-register', [RegistrationController::class, 'storeChar']);
+Route::post('/charity-register', [RegistrationController::class, 'storeCharity']);
 
 Route::get('newsLetter' ,function(){
     Alert::success('شكرا لك على الإشتراك');

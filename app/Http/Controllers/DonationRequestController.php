@@ -21,13 +21,7 @@ class DonationRequestController extends Controller
      */
     public function create(Request $request)
     {
-        $donation_request = new DonationRequest();
-        $donation_request->message = $request->message;
-        $donation_request->charity_id = 5;
-        $donation_request->donation_id = $request->donation_id;
-        $donation_request->save();
-        Alert::success('تم إرسال الطلب بنجاح');
-        return redirect()->back();
+
     }
 
 
@@ -36,7 +30,14 @@ class DonationRequestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $donation_request = new DonationRequest();
+        $donation_request->message = $request->message;
+        $donation_request->charity_id = auth()->user()->charity->id;
+        $donation_request->donation_id = $request->donation_id;
+        $donation_request->save();
+        Alert::success('تم إرسال الطلب بنجاح');
+
+        return redirect('/donations');
     }
 
     /**

@@ -122,12 +122,12 @@
             <h2 class="text-center text-2xl text-dark_2 mb-4"> مرحبا في<span class="text-sahem_pr-500 font-madani"> ساهم
                     ، </span> إختر نوع الحساب لتسجيل الدخول</h2>
             <div class="flex justify-center items-center p-4 gap-4 ">
-                <a href="/charity/login?from=charity"
+                <a href="/charity/login"
                     class="flex flex-col p-4 border-2 text-dark_2 border-gray-300 rounded-xl bg-white items-center justify-center w-1/2 h-48 shadow-2xl hover:shadow-sm hover:border-sahem_pr-500 hover:text-sahem_pr-500">
                     <img src="/assets/graphics/charity_account.png" alt="" class="w-24">
                     <p class=" font-madani text-xl ">الدخول كجهة خيرية</p>
                 </a>
-                <a href="/donor/login?from=donor"
+                <a href="/donor/login"
                     class="flex flex-col p-4 border-2 text-dark_2 border-gray-300 rounded-xl bg-white items-center justify-center w-1/2 h-48 shadow-2xl hover:shadow-sm hover:border-sahem_pr-500 hover:text-sahem_pr-500">
                     <img src="/assets/graphics/donor_account.png" alt="" class="w-24">
                     <p class=" font-madani text-xl ">الدخول كمتبرع

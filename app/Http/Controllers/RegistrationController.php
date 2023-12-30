@@ -87,7 +87,7 @@ class RegistrationController extends Controller
         $user->name = $validated['name'];
         $user->email = $validated['email'];
         $user->password = $validated['password'];
-        $user->role = 'donor';
+        $user->role = 'charity';
         $user->save();
 
         $donor = new Charity();

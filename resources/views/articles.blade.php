@@ -6,7 +6,7 @@
             @foreach ($articles as $article)
                 <article class="max-w-xs">
                     <a href={{ route('article.show', ['id' => $article->id]) }}>
-                        <img src={{ asset('storage/' . $article->image) }} class="mb-5 rounded-lg" alt="Image 1">
+                        <img src="{{ asset('storage/' . $article->image) }}" class="mb-5 rounded-lg" alt="Image 1">
                     </a>
                     <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
                         <a href={{ route('article.show', ['id' => $article->id]) }}>{{ $article->title }}</a>

@@ -94,7 +94,9 @@ class DonationRequestResource extends Resource
     }
     public static function getNavigationBadge(): ?string
     {
-        return static::$model::count();
+        return static::$model::whereHas('donation.donor', function ($query) {
+            $query->where('donor_id', auth()->user()->donor->id);
+        })->count();
     }
 
     public static function infolist(Infolist $infolist): Infolist
@@ -118,5 +120,11 @@ class DonationRequestResource extends Resource
                 }),
 
             ]);
+    }
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->whereHas('donation.donor', function ($query) {
+            $query->where('donor_id', auth()->user()->donor->id);
+        });
     }
 }

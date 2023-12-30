@@ -95,6 +95,10 @@ class DonationRequestResource extends Resource
 
     public static function getNavigationBadge(): ?string
     {
-        return static::$model::count();
+        return static::$model::where('charity_id', auth()->user()->charity->id)->count();
+    }
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->where('charity_id', auth()->user()->charity->id);
     }
 }
