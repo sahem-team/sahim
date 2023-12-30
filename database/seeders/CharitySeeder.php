@@ -24,7 +24,7 @@ class CharitySeeder extends Seeder
 
         foreach ($charities as  $charity) {
 
-            $imageUrl = 'donors_images/' . str_replace(' ', '_', strtolower($charity['name'])) . '.jpg';
+            $imageUrl = 'charities_images/' . str_replace(' ', '_', strtolower($charity['name'])) . '.png';
 
             Charity::create(
                 [

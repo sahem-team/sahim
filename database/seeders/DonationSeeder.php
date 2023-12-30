@@ -69,7 +69,7 @@ class DonationSeeder extends Seeder
             $imageUrl = 'donation_images/' . str_replace(' ', '_', strtolower($plateName)) . '.jpg';
 
             Donation::create([
-                'donor_id' => $faker->numberBetween(8, 11),
+                'donor_id' => $faker->numberBetween(1, 4),
                 'donation_name' => $plateName,
                 'description' => $description,
                 'image_url' => $imageUrl,

@@ -99,7 +99,8 @@ class ManageDonationRequests extends ManageRelatedRecords
                     }
                 }),
             ])
-            ->groupedBulkActions([]);
+            ->groupedBulkActions([])
+            ->emptyStateHeading('  لا توجد طلبات بعد');
     }
 
 }

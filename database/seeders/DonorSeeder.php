@@ -23,7 +23,7 @@ class DonorSeeder extends Seeder
 
         foreach ($donors as  $donor) {
 
-            $imageUrl = 'donors_images/' . str_replace(' ', '_', strtolower($donor['name'])) . '.jpg';
+            $imageUrl = 'donors_images/' . str_replace(' ', '_', strtolower($donor['name'])) . '.png';
 
             Donor::create([
                 'user_id' => $donor['user_id'],

@@ -29,6 +29,7 @@ class HomeSeeder extends Seeder
             'step_4_title' => '
 تقوم المؤسسة بتوزيع التبرعات على المحتاجين',
             'step_4_description' => 'بمجرد استلام الطعام من المتبرع، تقوم المؤسسة الخيرية بتنظيم وتوزيع الطعام على المحتاجين. يتم التعامل بحرفية لضمان توزيع الطعام بشكل عادل وفقًا للاحتياجات الملحة، ويمكن أن يشمل ذلك التوزيع عبر مطابخ خيرية أو توصيل الطعام مباشرةً للعائلات أو الأفراد الذين يحتاجون إليه بشكل مباشر.',
+            'page_image' => 'pages_images/home.png'
         ]);
         // /////////////////////////////
         Home::Create([
@@ -36,6 +37,7 @@ class HomeSeeder extends Seeder
             'contact_us_location' => 'الرياض -حي الملقا - انس مالك',
             'contact_us_email'=> 'contact@sahem.com',
             'contact_us_phone'=> '+966505152703',
+            'page_image' => 'pages_images/contact_us.png'
         ]);
         // /////////////////////////////
         Home::Create([
@@ -61,6 +63,7 @@ class HomeSeeder extends Seeder
             'about_A_9'=> 'يمكنكم التواصل معنا عبر البريد الإلكتروني [البريد الإلكتروني] أو من خلال صفحتنا على الشبكات الاجتماعية للحصول على أي استفسارات أو معلومات إضافية.',
             'about_Q_10'=>'',
             'about_A_10'=>'',
+            'page_image' => 'pages_images/about_us.png'
         ]);
     }
 }
