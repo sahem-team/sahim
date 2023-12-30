@@ -10,6 +10,7 @@ use App\Filament\Resources\HomeResource;
 use App\Http\Controllers\RegistrationController;
 use PhpParser\Builder\Function_;
 use PhpParser\Node\Expr\FuncCall;
+use RealRashid\SweetAlert\Facades\Alert;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +59,16 @@ Route::get('charity-register', function(){
 });
 
 Route::post('/donor-register', [RegistrationController::class, 'storeDonor']);
-Route::post('/charity-register', [RegistrationController::class, 'storeCharity']);
+Route::post('/charity-register', [RegistrationController::class, 'storeChar']);
+
+Route::get('newsLetter' ,function(){
+    Alert::success('شكرا لك على الإشتراك');
+    return redirect('/articles');
+});
+Route::get('contact' ,function(){
+    Alert::success(' تم الإرسال، سنرد عليك في أقرب وقت');
+    return redirect('/contact-us');
+});
 
 Route::get('receipt/{donation_request}', [generatePDF::class, 'index'])->name('receipt.pdf');
+

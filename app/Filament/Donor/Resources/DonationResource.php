@@ -21,10 +21,6 @@ use Filament\Infolists\Infolist;
 use Filament\Pages\SubNavigationPosition;
 use Filament\Resources\Pages\Page;
 
-
-
-
-
 class DonationResource extends Resource
 {
     protected static ?string $model = Donation::class;

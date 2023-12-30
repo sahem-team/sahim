@@ -23,7 +23,8 @@
         </div>
         <div class="flex sm:flex-row flex-col-reverse items-center justify-between">
             <img src="/assets/graphics/contact us.svg" class="sm:h-[500px] characters z-50 sm:-mb-[60px] -mb-12" alt="">
-            <form id="contactForm" class="sm:w-1/2">
+            <form action="/contact"  class="sm:w-1/2">
+                @csrf
                         <div class="mb-6">
                             <div class="mx-0 mb-1 sm:mb-4">
                                 <div class="mx-0 mb-1 sm:mb-4">

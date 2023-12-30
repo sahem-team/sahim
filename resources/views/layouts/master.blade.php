@@ -13,9 +13,10 @@
     <title>{{ config('app.name', 'Sahem') }}</title>
 
     {{-- tailwind --}}
-    @vite('resources/css/app.css')
     @vite('resources/css/animations.css')
     @vite('resources/js/animations.js')
+    @vite('resources/css/app.css')
+
 
     {{-- favicon --}}
     <link rel="icon" type="image/x-icon" href="/assets/logos/1.png">

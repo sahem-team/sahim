@@ -5,14 +5,14 @@
         <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
             @foreach ($articles as $article)
                 <article class="max-w-xs">
-                    <a href={{route('article.show', ['id' => $article->id])}}>
+                    <a href={{ route('article.show', ['id' => $article->id]) }}>
                         <img src={{ asset('storage/' . $article->image) }} class="mb-5 rounded-lg" alt="Image 1">
                     </a>
                     <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href={{route('article.show', ['id' => $article->id])}}>{{ $article->title }}</a>
+                        <a href={{ route('article.show', ['id' => $article->id]) }}>{{ $article->title }}</a>
                     </h2>
                     <p class="mb-4 text-gray-500 dark:text-gray-400 text-justify">{{ $article->description }}</p>
-                    <a href={{route('article.show', ['id' => $article->id])}}
+                    <a href={{ route('article.show', ['id' => $article->id]) }}
                         class="inline-flex items-center font-medium underline underline-offset-4  text-sahem_pr-500  hover:no-underline">
                         اقرأ المقال كاملا </a>
                 </article>
@@ -31,7 +31,8 @@
                 <p class="mx-auto mb-8 max-w-2xl  text-gray-500 md:mb-12 sm:text-xl dark:text-gray-400 text-center">قم
                     بتسجيل بريدك الإلكتروني للتوصل بأحدث مقالاتنا بشكل أسبوعي بالإضافة إلى آخر تطورات المنصة
                 </p>
-                <form action="#">
+                <form action="/newsLetter" method="get">
+                    @csrf
                     <div class=" flex flex-row-reverse  max-w-screen-sm  mx-auto mb-2  ">
                         <div class="relative w-full">
                             <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">

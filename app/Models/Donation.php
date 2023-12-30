@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
@@ -23,6 +22,4 @@ class Donation extends Model implements HasMedia
     {
         return $this->hasMany(DonationRequest::class);
     }
-
-    
 }
