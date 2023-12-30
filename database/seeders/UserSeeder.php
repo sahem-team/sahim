@@ -13,6 +13,14 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        // Admin
+        User::create([
+            'name' => 'DemoAdmin',
+            'email' => 'admintest@email.com',
+            'password' => '00000000',
+            'role' => 'admin',
+        ]);
+
         // Charities
         User::create([
             'name' => 'Charity_1',
@@ -45,9 +53,9 @@ class UserSeeder extends Seeder
             'role' => 'charity',
         ]);
         User::create([
-            'name' => 'Charity_5',
-            'email' => 'charity_5@example.com',
-            'password' => 'charitypassword',
+            'name' => 'DemoCharity',
+            'email' => 'charitytest@email.com',
+            'password' => '000000',
             'role' => 'charity',
         ]);
 
@@ -72,9 +80,9 @@ class UserSeeder extends Seeder
             'role' => 'donor',
         ]);
         User::create([
-            'name' => 'Donor_4',
-            'email' => 'donor_4@example.com',
-            'password' => 'donorpassword',
+            'name' => 'DemoDonor',
+            'email' => 'donortest@email.com',
+            'password' => '000000',
             'role' => 'donor',
         ]);
 

@@ -53,7 +53,14 @@ class ArticleSeeder extends Seeder
 استكشاف لقصص ملهمة حول الأفراد الذين تغيرت حياتهم بفضل المساهمات الغذائية وكيف تأثرت حياتهم بالطعام الذي تم توزيعه من خلال منصة "ساهم".',
         ];
 
-        $article = "";
+        $filePath = __DIR__ . '/article_example.txt';
+
+        if (file_exists($filePath)) {
+            $article = file_get_contents($filePath);
+            // Now $article contains the content of your text file
+        } else {
+            $article = '';
+        };
 
 
         foreach ($titles as $index => $title) {
