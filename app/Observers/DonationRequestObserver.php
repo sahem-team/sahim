@@ -30,9 +30,9 @@ class DonationRequestObserver
         foreach ($relatedRequests as $relatedRequest) {
             $relatedRequest->update(['donation_status' => 'لم يتم التبرع له ', 'request_status' => 'تم التبرع لجهة أخرى']);
         }
-        $donation = Donation::find($donationRequest->donation_id);
-        $donation->status = 'تم التبرع';
-        $donation->save();
+        // $donation = Donation::find($donationRequest->donation_id);
+        // $donation->status = 'تم التبرع';
+        // $donation->save();
 
     }
 

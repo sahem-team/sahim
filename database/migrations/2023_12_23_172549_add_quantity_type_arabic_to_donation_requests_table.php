@@ -12,7 +12,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('donation_requests', function (Blueprint $table) {
-            $table->renameColumn('status', 'request_status'); // ['تم الطلب', 'تم التبرع', 'تم التسليم','تم التبرع لجهة أخرى']
+            $table->renameColumn('status', 'request_status')->default('تم الطلب'); // ['تم الطلب', 'تم التبرع', 'تم التسليم','تم التبرع لجهة أخرى']
             $table->string('donation_status')->default('ينتضر'); // ['لم يتم التبرع له','تم التبرع له','ينتضر']
         });
     }

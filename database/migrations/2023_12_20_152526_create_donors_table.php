@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->string('type'); // store | Restaurant
-            $table->string('cuisine_type');
             $table->string('name');
             $table->string('image')->nullable();
             $table->string('location');
