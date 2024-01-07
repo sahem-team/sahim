@@ -23,7 +23,7 @@
         </div>
         <div class="flex sm:flex-row flex-col-reverse items-center justify-between">
             <img src="/assets/graphics/contact us.svg" class="sm:h-[500px] characters z-50 sm:-mb-[60px] -mb-12" alt="">
-            <form action="/contact"  class="sm:w-1/2">
+            <form action="{{route('contactUs.store')}}" method="POST"  class="sm:w-1/2">
                 @csrf
                         <div class="mb-6">
                             <div class="mx-0 mb-1 sm:mb-4">
@@ -35,7 +35,7 @@
                                 </div>
                             </div>
                             <div class="mx-0 mb-1 sm:mb-4">
-                                <label for="textarea" class="pb-1 text-xs uppercase tracking-wider"></label><textarea id="textarea" name="textarea" cols="30" rows="5" placeholder="أكتب رسالتك هنا..." class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md  sm:mb-0"></textarea>
+                                <label for="textarea" class="pb-1 text-xs uppercase tracking-wider"></label><textarea id="textarea" name="message" cols="30" rows="5" placeholder="أكتب رسالتك هنا..." class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md  sm:mb-0"></textarea>
                             </div>
                         </div>
                         <div class="text-center">

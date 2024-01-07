@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\Home;
 use Illuminate\Support\Facades\Route;
 use App\Filament\Resources\HomeResource;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\RegistrationController;
 use PhpParser\Builder\Function_;
 use PhpParser\Node\Expr\FuncCall;
@@ -35,6 +36,8 @@ Route::get('/contact-us', function () {
     $home = Home::where('page', 'تواصل معنا')->first();
     return view('contactUs', compact('home'));
 });
+Route::post('/contact-us', [MessageController::class, 'store'])->name('contactUs.store');
+
 Route::get('/article/{id}', function ($id) {
     $article = Article::find($id);
     return view('article', compact('article'));
@@ -72,10 +75,5 @@ Route::get('newsLetter' ,function(){
     Alert::success('شكرا لك على الإشتراك');
     return redirect('/articles');
 });
-Route::get('contact' ,function(){
-    Alert::success(' تم الإرسال، سنرد عليك في أقرب وقت');
-    return redirect('/contact-us');
-});
-
 Route::get('receipt/{donation_request}', [generatePDF::class, 'index'])->name('receipt.pdf');
 

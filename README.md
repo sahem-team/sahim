@@ -52,6 +52,7 @@ To run this project locally, ensure you have the following things installed: [**
    `php artisan db:seed --class=DonorSeeder` <br>
    `php artisan db:seed --class=CharitySeeder` <br>
    `php artisan db:seed --class=DonationSeeder` <br>
+   `php artisan db:seed --class=MessageSeeder` <br>
 
 9. Run `npm install ` to install frontend dependencies.
 
