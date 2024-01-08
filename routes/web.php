@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 use App\Filament\Resources\HomeResource;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\RegistrationController;
+use Illuminate\Http\Request;
 use PhpParser\Builder\Function_;
 use PhpParser\Node\Expr\FuncCall;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -76,4 +77,17 @@ Route::get('newsLetter' ,function(){
     return redirect('/articles');
 });
 Route::get('receipt/{donation_request}', [generatePDF::class, 'index'])->name('receipt.pdf');
+
+Route::get('/login', function (Request $request) {
+    $previousUrl = $request->headers->get('referer');
+
+    if (strpos($previousUrl, '/donor/edit-profile') !== false) {
+        return redirect(route('filament.donor.auth.login'));
+    } elseif (strpos($previousUrl, '/charity/edit-profile') !== false) {
+        return redirect(route('filament.charity.auth.login'));
+    } else {
+        // Default redirect if the previous URL doesn't match the conditions
+        return redirect('/'); // You can set a default here
+    }
+})->name('login');
 

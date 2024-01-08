@@ -83,7 +83,7 @@
                 <form action={{route('donation_requests.store')}} class="flex flex-col w-full" method="POST">
                     @csrf
                     <label class="">أكتب رسالة للمتبرع</label>
-                    <textarea class="w-full my-2 bg-gray-50 rounded-xl focus:ring-sahem_pr-500 focus:border-sahem_pr-500" name="message"
+                    <textarea required class="w-full my-2 bg-gray-50 rounded-xl focus:ring-sahem_pr-500 focus:border-sahem_pr-500" name="message"
                         id="" cols="30" rows="2"></textarea>
                         <input type="hidden" name="donation_id" value={{$donation->id}}>
                     <button

@@ -2,9 +2,11 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Charity\Pages\EditProfile;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\MenuItem;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -26,8 +28,10 @@ class CharityPanelProvider extends PanelProvider
             ->id('charity')
             ->path('charity')
             ->login()
-            // ->registration()
-            ->topNavigation()
+        ->profile()
+            ->userMenuItems([
+                'profile' => MenuItem::make()->url(fn (): string => EditProfile::getUrl())
+            ])            ->topNavigation()
             ->colors([
                 'primary' => '#f16d5b',
             ])
