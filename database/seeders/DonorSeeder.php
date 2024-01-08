@@ -15,10 +15,10 @@ class DonorSeeder extends Seeder
     public function run()
     {
         $donors = [
-            ['user_id' => '8', 'name' => 'بابا غنوج النعيم', 'type' => 'restaurant', 'cuisin_type' => 'arabic', 'location' => 'الرياض', 'contact_email' => 'baba_ghanoj@email.com', 'contact_phone' => '02255'],
-            ['user_id' => '9', 'name' => 'مهرجان الكباب', 'type' => 'restaurant', 'cuisin_type' => 'amirearabiccan', 'location' => 'الرياض', 'contact_email' => 'kabab@email.com', 'contact_phone' => '02266'],
-            ['user_id' => '10', 'name' => 'لذة الدولمة', 'type' => 'restaurant', 'cuisin_type' => 'amirecan', 'location' => 'جدة', 'contact_email' => 'doumah@email.com', 'contact_phone' => '02277'],
-            ['user_id' => '11', 'name' => 'لوحة', 'type' => 'store', 'cuisin_type' => 'null', 'location' => 'جدة', 'contact_email' => 'loha@email.com', 'contact_phone' => '02288'],
+            ['user_id' => '8', 'name' => 'بابا غنوج النعيم', 'type' => 'restaurant',  'location' => 'الرياض', 'contact_email' => 'baba_ghanoj@email.com', 'contact_phone' => '02255'],
+            ['user_id' => '9', 'name' => 'مهرجان الكباب', 'type' => 'restaurant',  'location' => 'الرياض', 'contact_email' => 'kabab@email.com', 'contact_phone' => '02266'],
+            ['user_id' => '10', 'name' => 'لذة الدولمة', 'type' => 'restaurant',  'location' => 'جدة', 'contact_email' => 'doumah@email.com', 'contact_phone' => '02277'],
+            ['user_id' => '11', 'name' => 'لوحة', 'type' => 'store',  'location' => 'جدة', 'contact_email' => 'loha@email.com', 'contact_phone' => '02288'],
         ];
 
         foreach ($donors as  $donor) {
@@ -29,7 +29,6 @@ class DonorSeeder extends Seeder
                 'user_id' => $donor['user_id'],
                  'name' => $donor['name'],
                  'type' => $donor['type'],
-                 'cuisine_type' => $donor['cuisin_type'],
                  'image'=> $imageUrl,
                  'location' => $donor['location'],
                  'contact_email' => $donor['contact_email'],

@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('donations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('donor_id')->constrained('donors');
-            $table->foreignId('charity_id')->nullable()->constrained('charities');
+            $table->foreignId('donor_id')->constrained('donors')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('charity_id')->nullable()->constrained('charities')->onDelete('cascade')->onUpdate('cascade');
             $table->string('donation_name');
             $table->text('description');
             $table->string('image_url')->nullable();
-            $table->enum('quantity_type', ['bag', 'box', 'item', 'unit', 'plate', 'package', 'bottle', 'liter', 'kilogram', 'gram', 'milliliter']);
+            $table->string('quantity_type')->default('وحدة');
             $table->integer('quantity');
+            $table->string('status')->default('مُدرج');
             $table->date('expiration_date');
-            $table->enum('status', ['listed', 'donated', 'delivered', 'rejected'])->default('listed');
             $table->timestamps();
         });
     }
