@@ -30,26 +30,17 @@ class DonationRequestResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('charity_id')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('donation_id')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('message')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('request_status')
-                    ->required()
-                    ->maxLength(255)
-                    ->default('listed'),
-                Forms\Components\TextInput::make('donation_status')
-                    ->required()
-                    ->maxLength(255)
-                    ->default('ينتضر'),
-                Forms\Components\Toggle::make('accepted')
-                    ->required(),
-                Forms\Components\TextInput::make('delivery_code')
-                    ->maxLength(255),
+
+                Forms\Components\Select::make('request_status')->label('حالة الطلب')->options([
+                    'تم الطلب' => 'تم الطلب',
+                    'تم التبرع' => 'تم التبرع',
+                    'تم التسليم' => 'تم التسليم',
+                    'تم التبرع لجهة أخرى' => 'تم التبرع لجهة أخرى'
+                ])->native(false),
+                Forms\Components\TextInput::make('delivery_code')->label('رمز التسليم'),
+                Forms\Components\TextInput::make('message')->label('الرسالة')
+                    ->columnSpanFull(),
+
             ]);
     }
 
@@ -85,9 +76,9 @@ class DonationRequestResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('charity.name')->label('الجهة الخيرية '),
                 Tables\Columns\TextColumn::make('donation.donor.name')->label('المتبرع '),
-                Tables\Columns\TextColumn::make('donation.donation_name')->label('اسم التبرع'),
+                Tables\Columns\TextColumn::make('donation.donation_name')->label('اسم التبرع')->limit(10),
                 Tables\Columns\ImageColumn::make('donation.image_url')->size(40)->label(' صورة التبرع'),
-                Tables\Columns\TextColumn::make('message')->label(' الرسالة ')->limit(30)->extraAttributes([
+                Tables\Columns\TextColumn::make('message')->label(' الرسالة ')->limit(10)->extraAttributes([
                     'class' => 'max-w-xs break-words'
                 ]),
                 Tables\Columns\TextColumn::make('donation_status')->label('الحالة')->badge()
@@ -108,10 +99,12 @@ class DonationRequestResource extends Resource
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    // Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
     }

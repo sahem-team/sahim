@@ -16,7 +16,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Infolists\Components\Section;
-
+use Illuminate\Support\Facades\Hash;
 
 class UserResource extends Resource
 {
@@ -32,20 +32,16 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\FileUpload::make('image')->label('الصورة')
-                    ->image()->columnSpanFull(),
                 Forms\Components\TextInput::make('name')->label('الاسم')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('location')->label('الموقع')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('contact_email')->label('البريد الالكتروني')
+                Forms\Components\TextInput::make('email')->label('البريد الالكتروني')
                     ->email(),
-                Forms\Components\TextInput::make('contact_phone')->label('الهاتف')
-                    ->tel()
-
-            ]);
+            Forms\Components\TextInput::make('password')->label('كلمة المرور الجديدة')
+            ->password()
+                ->dehydrateStateUsing(fn ($state) => Hash::make($state))
+                ->dehydrated(fn ($state) => filled($state)),
+            ])->columns(3);
     }
 
     public static function infolist(Infolist $infolist): Infolist
@@ -109,10 +105,12 @@ class UserResource extends Resource
                 //
             ])
             ->actions([
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    // Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ])
             ->recordUrl(null)

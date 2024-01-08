@@ -31,28 +31,15 @@ class DonationResource extends Resource
         return $form
             ->schema([
 
-                Forms\Components\TextInput::make('donation_name')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('description')
-                    ->required()
-                    ->maxLength(65535)
+                Forms\Components\TextInput::make('donation_name')->label('اسم التبرع'),
+                Forms\Components\DatePicker::make('expiration_date')->label('تاريخ الانتهاء'),
+                Forms\Components\TextInput::make('quantity_type')->label('نوع الكمية'),
+                Forms\Components\TextInput::make('quantity')->label('الكمية'),
+                Forms\Components\RichEditor::make('description')->label('الوصف')
                     ->columnSpanFull(),
-                Forms\Components\FileUpload::make('image_url')
-                    ->image(),
-                Forms\Components\TextInput::make('quantity_type')
-                    ->required()
-                    ->maxLength(255)
-                    ->default('وحدة'),
-                Forms\Components\TextInput::make('quantity')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\DatePicker::make('expiration_date')
-                    ->required(),
-                Forms\Components\TextInput::make('status')
-                    ->required()
-                    ->maxLength(255)
-                    ->default('مُدرج'),
+                Forms\Components\FileUpload::make('image_url')->label('صورة التبرع')
+                    ->image()
+                ->columnSpanFull(),
             ]);
     }
 
@@ -79,10 +66,12 @@ class DonationResource extends Resource
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    // Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
     }
