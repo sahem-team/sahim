@@ -13,6 +13,7 @@ class DonationController extends Controller
      */
     public function index(Request $request)
     {
+        // Create the filter query
         $query = Donation::query();
 
         if ($request->filled('donationName')) {
@@ -39,28 +40,12 @@ class DonationController extends Controller
             $query->whereDate('expiration_date', '>', $request->input('expireDate'));
         }
 
-        $donors = Donor::all();
-        $donors_locations = Donor::pluck('location')->unique();
-        $donations = $query->paginate(12);
-        return view('donations', compact('donations', 'donors', 'donors_locations'));
+        $donors = Donor::all(); // donors to use them in donors filter select dropdown
+        $donors_locations = Donor::pluck('location')->unique(); // distinct donors locations to use them in locations filter select dropdown
+        $donations = $query->paginate(12); // filtered donations
+        return view('donations.donations', compact('donations', 'donors', 'donors_locations'));
     }
 
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -68,30 +53,7 @@ class DonationController extends Controller
     public function show(string $id)
     {
         $donation = Donation::find($id);
-        return view('donation', compact('donation'));
+        return view('donations.donation', compact('donation'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

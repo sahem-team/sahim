@@ -17,7 +17,7 @@
         <div>
             <img src={{ asset('assets/logos/6.png') }} alt="" class="w-[250px]">
         </div>
-        <h1 class="bg-white mt-24 mb-6 text-6xl font-madani p-8 text-center">
+        <h1 class="bg-white mt-4 mb-6 text-6xl font-madani p-8 text-center">
             توصيل لتسلم تبرع
         </h1>
         <div>

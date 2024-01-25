@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\HomeResource\Pages;
-use App\Filament\Resources\HomeResource\RelationManagers;
 use App\Models\Home;
 use Filament\Forms;
 use Filament\Forms\Components\Section;
@@ -12,8 +11,6 @@ use Filament\Resources\Resource;
 use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class HomeResource extends Resource
 {

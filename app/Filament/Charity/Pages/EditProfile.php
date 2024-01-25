@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Filament\Charity\Pages;
+// This class handles Charites Profile Update
 
+namespace App\Filament\Charity\Pages;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
@@ -17,7 +18,6 @@ class EditProfile extends Page implements HasForms
 {
     use InteractsWithForms;
 
-    //...
     protected static string $view = 'filament.charity.pages.edit-profile';
     public static ?string $title = 'تعديل الملف الشخصي';
 

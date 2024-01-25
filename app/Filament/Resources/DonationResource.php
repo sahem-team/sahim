@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\DonationResource\Pages;
-use App\Filament\Resources\DonationResource\RelationManagers;
 use App\Models\Donation;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -14,8 +13,6 @@ use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class DonationResource extends Resource
 {

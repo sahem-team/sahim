@@ -2,6 +2,11 @@
 
 Saham is a platform built using Laravel, Filament, Tailwind CSS, and JavaScript. This platform aims to facilitate the donation and distribution of surplus food from restaurants and stores to those in need. It encompasses various features including home, donations, articles, about us, contact us pages, and three distinct panels for donors, charities, and an admin interface.
 
+## Home Page
+![Home Page](public/assets/HomePage.png)
+## Admin Panel
+![Admin PAnel](public/assets/AdminPnael.png)
+
 ## Tech Stack
 
 -   **Framework:** Laravel
@@ -62,10 +67,11 @@ To run this project locally, ensure you have the following things installed: [**
 
 12. Visit `http://127.0.0.1:8000/` in your browser to access the application.
 
+## Login credintials
+- Admin: admintest@email.com + 00000000
+- donor: donortest@email.com + 000000
+- charity: charitytest@email.com + 000000
+
 ## Contributing
 
 We welcome contributions to enhance the functionality, usability, or features of Saham Project. Feel free to fork this repository, make your changes, and submit a pull request!
-
-## License
-
-This project is licensed under [MIT License](LICENSE).

@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\DonorResource\Pages;
-use App\Filament\Resources\DonorResource\RelationManagers;
 use App\Models\Donor;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -13,8 +12,6 @@ use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Infolists\Components\Section;
 
 

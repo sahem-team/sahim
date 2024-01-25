@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CharityResource\Pages;
-use App\Filament\Resources\CharityResource\RelationManagers;
 use App\Models\Charity;
 use Filament\Forms;
 use Filament\Infolists\Components\Section;
@@ -13,11 +12,8 @@ use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Table;
 
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CharityResource extends Resource
 {

@@ -7,13 +7,7 @@ use App\Models\DonationRequest;
 
 class DonationRequestObserver
 {
-    /**
-     * Handle the DonationRequest "created" event.
-     */
-    public function created(DonationRequest $donationRequest): void
-    {
-        //
-    }
+
 
     /**
      * Handle the DonationRequest "updated" event.
@@ -34,29 +28,5 @@ class DonationRequestObserver
         // $donation->status = 'تم التبرع';
         // $donation->save();
 
-    }
-
-    /**
-     * Handle the DonationRequest "deleted" event.
-     */
-    public function deleted(DonationRequest $donationRequest): void
-    {
-        //
-    }
-
-    /**
-     * Handle the DonationRequest "restored" event.
-     */
-    public function restored(DonationRequest $donationRequest): void
-    {
-        //
-    }
-
-    /**
-     * Handle the DonationRequest "force deleted" event.
-     */
-    public function forceDeleted(DonationRequest $donationRequest): void
-    {
-        //
     }
 }

@@ -3,20 +3,16 @@
 namespace App\Filament\Donor\Resources;
 
 use App\Filament\Donor\Resources\DonationRequestResource\Pages;
-use App\Filament\Donor\Resources\DonationRequestResource\RelationManagers;
-use App\Filament\Donor\Resources\DonationResource\RelationManagers\RequestsRelationManager;
+
 use App\Models\DonationRequest;
-use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class DonationRequestResource extends Resource
 {
@@ -70,12 +66,6 @@ class DonationRequestResource extends Resource
             ->recordUrl(null);
     }
 
-    public static function getRelations(): array
-    {
-        return [
-            RequestsRelationManager::class
-        ];
-    }
 
     public static function canCreate(): bool
     {
