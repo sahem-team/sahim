@@ -67,7 +67,7 @@ To run this project locally, ensure you have the following things installed: [**
 
 12. Visit `http://127.0.0.1:8000/` in your browser to access the application.
 
-## Login credintials
+## Login credentials
 - Admin: admintest@email.com + 00000000
 - donor: donortest@email.com + 000000
 - charity: charitytest@email.com + 000000
