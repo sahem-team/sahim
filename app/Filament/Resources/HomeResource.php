@@ -101,7 +101,7 @@ class HomeResource extends Resource
                 ])
             ])
             ->filters([
-                //
+                //#
             ])
             ->contentGrid([
                 'md' => 2,
@@ -122,7 +122,7 @@ class HomeResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            //#
         ];
     }
 
