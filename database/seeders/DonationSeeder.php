@@ -11,7 +11,7 @@ use Faker\Factory as Faker;
 class DonationSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeds
      */
     public function run()
     {
