@@ -39,7 +39,7 @@ class UserssChart extends ChartWidget
         $activeFilter = $this->filter;
         $query = User::query();
 
-        // Check if the filter is set to 'user', include both donors and charities
+        // Check if the filter is set to 'user', include both donors and charities#
         if ($activeFilter === 'user') {
             $query->whereIn('role', ['donor', 'charity']);
         } else {
