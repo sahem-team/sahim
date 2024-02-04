@@ -1,5 +1,5 @@
 <?php
-
+/**/
 namespace App\Filament\Resources\ArticleResource\Pages;
 
 use App\Filament\Resources\ArticleResource;
