@@ -1,5 +1,5 @@
 <?php
-
+/**/
 namespace App\Filament\Resources\MessageResource\Pages;
 
 use App\Filament\Resources\MessageResource;
