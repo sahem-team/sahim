@@ -48,7 +48,7 @@ class DonorPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Donor/Widgets'), for: 'App\\Filament\\Donor\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
-                // App\Filament\Donor\Resources\DonationResource\Widgets\DonationOverview::class
+                // App\Filament\Donor\Resources\DonationResource\Widgets\DonationOverview::class#
 
             ])
             ->middleware([
