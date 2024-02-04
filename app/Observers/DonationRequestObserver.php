@@ -10,7 +10,7 @@ class DonationRequestObserver
 
 
     /**
-     * Handle the DonationRequest "updated" event.
+     * Handle the DonationRequest "updated" event.#
      */
     public function updated(DonationRequest $donationRequest)
     {
