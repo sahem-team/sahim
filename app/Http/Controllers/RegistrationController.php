@@ -13,7 +13,7 @@ class RegistrationController extends Controller
 {
 
     /**
-     * Register user, type Donor.
+     * Register user, type Donor.#
      */
     public function storeDonor(Request $request)
     {
