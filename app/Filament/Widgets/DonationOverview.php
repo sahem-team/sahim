@@ -26,7 +26,7 @@ class DonationOverview extends BaseWidget
                 ->descriptionIcon('heroicon-m-arrow-trending-up')
                 ->chart([15, 4, 10, 2, 12, 4, 12])
                 ->color('success'),
-
+/**/
         ];
     }
 }
