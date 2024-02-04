@@ -58,7 +58,7 @@ class UserResource extends Resource
                         //         if ($record->type == 'store') {
                         //             return 'متجر';
                         //         }
-                        //         return 'مطعم';
+                        //         return 'مطعم';#
                         //     }),
                         TextEntry::make('location')->label('الموقع')->color('primary'),
                         TextEntry::make('contact_email')->label('البريد الالكتروني')->color('primary'),
