@@ -52,7 +52,7 @@
 </body>
 <script>
     window.addEventListener('load', function() {
-        // Function to print the page
+        // Function to print the page.
         function printPage() {
             window.print(); // Print the page
 
