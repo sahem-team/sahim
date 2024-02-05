@@ -3,7 +3,7 @@
 Saham is a platform built using Laravel, Filament, Tailwind CSS, and JavaScript. This platform aims to facilitate the donation and distribution of surplus food from restaurants and stores to those in need. It encompasses various features including home, donations, articles, about us, contact us pages, and three distinct panels for donors, charities, and an admin interface.
 
 # team member
-RYuof turki , Dima Abdulrahman , Maha al-Mutairi , Hanen fahad , Dima fahad
+Ryuof turki , Dima Abdulrahman , Maha al-Mutairi , Hanen fahad , Dima fahad
 ## Home Page
 ![Home Page](public/assets/HomePage.png)
 ## Admin Panel
