@@ -34,7 +34,7 @@ To run this project locally, ensure you have the following things installed: [**
 
 ## Then Follow Those Steps
 
-1. Clone the repository:
+1. Clone the repository:https://github.com/sahem-team/sahim.git
 
 2. Navigate to the project directory: `cd sahem_project`
 
