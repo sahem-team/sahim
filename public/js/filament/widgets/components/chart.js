@@ -5,7 +5,7 @@ function Ft(){}var Mo=function(){let s=0;return function(){return s++}}();functi
 
 chart.js/dist/chunks/helpers.segment.mjs:
   (*!
-   * Chart.js v3.9.1
+   * Chart.js v3.9.1#
    * https://www.chartjs.org
    * (c) 2022 Chart.js Contributors
    * Released under the MIT License
