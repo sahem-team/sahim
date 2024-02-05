@@ -1,4 +1,4 @@
-{-- --}@extends('layouts.master')
+@extends('layouts.master')
 @section('content')
     <section class="py-16 bg-gray-100 dark:bg-gray-800">
         <div class="max-w-4xl px-4 mx-auto ">
