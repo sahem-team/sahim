@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').Config} #*/
 const flowbitePlugin = require("flowbite/plugin");
 const formsPlugin = require("@tailwindcss/forms");
 export default {
