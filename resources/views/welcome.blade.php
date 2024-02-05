@@ -1,4 +1,4 @@
-//@extends('layouts.master')
+@extends('layouts.master')
 @section('content')
     {{-- Header --}}
     <div class="  bg-sahem_pr-50 z-0  ">
