@@ -29,7 +29,7 @@ const observer = new IntersectionObserver((entries, observer) => {
                     entry.target.innerText = targetValue;
                 }
             };
-
+/**/
             updateCounter();
             observer.unobserve(entry.target);
         }
