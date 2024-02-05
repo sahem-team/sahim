@@ -4,10 +4,6 @@ Saham is a platform built using Laravel, Filament, Tailwind CSS, and JavaScript.
 
 # team member
 Ryuof turki , Dima Abdulrahman , Maha al-Mutairi , Hanen fahad , Dima fahad
-## Home Page
-![Home Page](public/assets/HomePage.png)
-## Admin Panel
-![Admin PAnel](public/assets/Adminpnael.png)
 
 ## Tech Stack
 
