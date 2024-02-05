@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-    {{-- Header --}}
+    {{-- Header. --}}
     <div class="  bg-sahem_pr-50 z-0  ">
         <div class="flex flex-col max-w-screen-xl justify-end pt-12 mx-auto relative z-0 overflow-x-clip">
             <img src="/assets/graphics/box.svg" alt=""
