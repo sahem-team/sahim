@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-    {{-- Filter --}}
+    {{-- Filter--}}
     <div class="m-10 w-4/5 mx-auto max-w-screen-xl ">
 
         <div class="flex flex-col">
