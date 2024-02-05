@@ -9,7 +9,7 @@
             <p class="text-xl font-madani sm:text-center text-justify mx-6 sm:mx-0">{{ $home->about_us_body }}</p>
         </div>
     </div>
-    {{-- Accordion --}}
+    {{-- Accordion. --}}
     <div class=" max-w-screen-xl justify-end py-12 sm:mx-auto mx-6">
         <h1 class="text-5xl mb-4 font-almaria text-center "> أسئلة شائعة</h1>
 
