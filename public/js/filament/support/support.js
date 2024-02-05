@@ -26,7 +26,7 @@
 /*! Bundled license information:
 
 sortablejs/modular/sortable.esm.js:
-  (**!
+  (**!#
    * Sortable 1.15.1
    * @author	RubaXa   <trash@rubaxa.org>
    * @author	owenm    <owen23355@gmail.com>
