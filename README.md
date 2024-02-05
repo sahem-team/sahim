@@ -38,6 +38,8 @@ To run this project locally, ensure you have the following things installed: [**
 
 ## Then Follow Those Steps
 
+1. Clone the repository:
+
 2. Navigate to the project directory: `cd sahem_project`
 
 3. Install the dependencies using Composer: `composer install --ignore-platform-reqs`
