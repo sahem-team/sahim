@@ -1,4 +1,4 @@
-@extends('layouts.master')
+//@extends('layouts.master')
 @section('content')
     <div class="flex flex-col max-w-screen-xl justify-end pt-12 mx-auto relative z-0 overflow-x-clip">
         <h1 class="text-5xl mb-4 font-almaria text-center">تواصل معنا </h1>
