@@ -7,7 +7,7 @@ Ryuof turki , Dima Abdulrahman , Maha al-Mutairi , Hanen fahad , Dima fahad
 ## Home Page
 ![Home Page](public/assets/HomePage.png)
 ## Admin Panel
-![Admin PAnel](public/assets/AdminPnael.png)
+![Admin PAnel](public/assets/Adminpnael.png)
 
 ## Tech Stack
 
