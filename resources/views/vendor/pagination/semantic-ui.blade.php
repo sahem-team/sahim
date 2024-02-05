@@ -9,7 +9,7 @@
 
         {{-- Pagination Elements --}}
         @foreach ($elements as $element)
-            {{-- "Three Dots" Separator --}}
+            {{-- "Three Dots" Separator. --}}
             @if (is_string($element))
                 <a class="icon item disabled" aria-disabled="true">{{ $element }}</a>
             @endif
