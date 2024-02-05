@@ -1,7 +1,7 @@
 @if ($paginator->hasPages())
     <nav>
         <ul class="pagination">
-            {{-- Previous Page Link --}}
+            {{-- Previous Page Link. --}}
             @if ($paginator->onFirstPage())
                 <li class="disabled" aria-disabled="true"><span>@lang('pagination.previous')</span></li>
             @else
