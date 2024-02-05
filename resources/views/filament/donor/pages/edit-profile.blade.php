@@ -1,4 +1,4 @@
-<x-filament-panels::page>
+//<x-filament-panels::page>
     <div class="flex items-start gap-8">
         <x-filament-panels::form wire:submit="updateProfil" class="w-full">
             {{ $this->editProfileForm }}
